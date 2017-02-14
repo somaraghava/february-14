@@ -61,6 +61,39 @@ puts planguage["oop"]
 puts planguage["rdbms"]
 puts planguage["IDE"]
 planguage.each{|k,v| puts "keys:#{k},values:#{v}"}
+puts planguage.has_key?("IDE")
+puts planguage.has_value?("maven")
+#r=planguage.dup
+r=planguage.invert
+puts r.inspect
+puts planguage.eql?(r)
+puts "the size of a planguage is : #{planguage.size}"
+puts "the length of a planguage is : #{planguage.length}"
+
+
+j2ee=Hash.new
+j2ee["DBM"]="JDBC"
+j2ee["WEB"]="SERVLETS"
+j2ee["SCRIPT"]="JSP"
+j2ee["FRAMEWORK"]="SPRINGS"
+
+j2ee.each_pair{|k,v| puts "key = #{k}, value = #{v}"}
+
+=begin
+  java=j2ee.merge!(planguage)
+java=j2ee.update(planguage)
+puts java.inspect
+puts j2ee.inspect
+puts planguage.inspect
+puts planguage.inspect
+=end
+
+#assoc - used to check the particular ()key,value) present in the hash or not by giving key as input
+
+puts j2ee.assoc("WEB").inspect
+#rassoc - used to check whether the particular (key,value) present in the hash or not by giving value as input
+puts j2ee.rassoc("SPRINGS").inspect
+
 
 
 
