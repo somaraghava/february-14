@@ -19,13 +19,13 @@ end
 
 #by using hashes
 
-profession={"raghava" => "IT","sunil" => "ACCOUNTING", "sampath" => "ELECTRIC","bhuvnesh" => "WEB DESIGNING","sangeeth" => "FINANCE"}
+profession={"raghava" => "IT","sunil" => "ACCOUNTING", "sampath" => "ELECTRIC","bhuvnesh" => "WEB DESIGNING","sangeeth" => "FINANCE","jaswanth" => "BUSINESS"}
 input = ""
 result=0
 
 puts "enter the name".upcase
 input=gets.chomp
-if profession.include?(input) then
+if profession.key?(input) then #here we can also use the include? insted of (key?)
   result = profession[input]
   puts "#{input} is working in #{result} sector"
 else
